@@ -1,70 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voltixa Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Voltixa Store</title>
+    <link rel="icon" type="image/png" href="img/logo/Voltixa-logo.png">
 
-<link rel="icon" type="image/png" href="img/logo/Voltixa-logo.png">
-
-<link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>⚡ Voltixa</h1>
-    <input type="text" id="search" placeholder="Search products...">
-    <div>Cart (<span id="cart-count">0</span>)</div>
-</header>
+    <header>
+        <div class="logo-area">
+            <i class="fas fa-bolt"></i>
+            <h1><a href="/">Voltixa</a></h1>
+        </div>
 
-<!-- Products (Image HTML me hai) -->
-<section class="products" id="product-list">
+        <div class="search-wrapper">
+            <input type="text" id="search" placeholder="Search bulbs, wires..." inputmode="search"
+                enterkeyhint="search">
+            <button id="searchBtn" aria-label="search"><i class="fas fa-search"></i></button>
+        </div>
 
-    <div class="product" data-name="LED Bulb" data-price="100">
-        <img src="img/led.jpg">
-        <h3>LED Bulb</h3>
-        <p>₹100</p>
-        <button onclick="addToCart(this)">Add</button>
+        <div class="cart-header-info">
+            <div class="cart-badge" id="cartToggle" role="button" tabindex="0">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-title">
+        <i class="fas fa-bolt" style="color:#2874f0;"></i>
+        <span>Top Electricals</span>
     </div>
 
-    <div class="product" data-name="Electric Board" data-price="250">
-        <img src="img/electric-board.jpg">
-        <h3>Switch Board</h3>
-        <p>₹250</p>
-        <button onclick="addToCart(this)">Add</button>
-    </div>
+    <!-- Products grid: mobile 2 cols, PC 3/4 cols -->
+    <section class="products" id="product-list">
+        <!-- Product 1 -->
+        <div class="product" data-name="LED Bulb" data-price="100" data-img="img/led.jpg">
+            <img src="img/led.jpg" alt="LED Bulb" loading="lazy">
+            <h3>LED Bulb</h3>
+            <div class="price">₹100</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product" data-name="Electric Board" data-price="250" data-img="img/electric-board.jpg">
+            <img src="img/electric-board.jpg" alt="Switch Board" loading="lazy">
+            <h3>Switch Board</h3>
+            <div class="price">₹250</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product" data-name="Electric Wire" data-price="500" data-img="img/wire.jpg">
+            <img src="img/wire.jpg" alt="Electric Wire" loading="lazy">
+            <h3>Electric Wire</h3>
+            <div class="price">₹500</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product" data-name="Fan" data-price="1500" data-img="img/fan.jpg">
+            <img src="img/fan.jpg" alt="Fan" loading="lazy">
+            <h3>Ceiling Fan</h3>
+            <div class="price">₹1500</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 5 -->
+        <div class="product" data-name="Extension Board" data-price="800" data-img="img/extention-board.jpg">
+            <img src="img/extention-board.jpg" alt="Extension Board" loading="lazy">
+            <h3>Extension Board</h3>
+            <div class="price">₹800</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="product" data-name="CFL Bulb" data-price="800" data-img="img/Lighting/CFL Bulb.jpg">
+            <img src="img/Lighting/CFL Bulb.jpg" alt="CFL Bulb" loading="lazy">
+            <h3>CFL Bulb</h3>
+            <div class="price">₹800</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Product 7 -->
+        <div class="product" data-name="Emergency Light" data-price="800" data-img="img/Lighting/Emergency Light.jpg">
+            <img src="img/Lighting/Emergency Light.jpg" alt="Emergency Light" loading="lazy">
+            <h3>Emergency Light</h3>
+            <div class="price">₹800</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
 
-    <div class="product" data-name="Electric Wire" data-price="500">
-        <img src="img/wire.jpg">
-        <h3>Electric Wire</h3>
-        <p>₹500</p>
-        <button onclick="addToCart(this)">Add</button>
-    </div>
 
-    <div class="product" data-name="Fan" data-price="1500">
-        <img src="img/fan.jpg">
-        <h3>Fan</h3>
-        <p>₹1500</p>
-        <button onclick="addToCart(this)">Add</button>
-    </div>
+        <!-- Product 8 -->
+        <div class="product" data-name="Torch Light" data-price="550" data-img="img/Lighting/Torch Light.jpg">
+            <img src="img/Lighting/Torch Light.jpg" alt="Torch Light" loading="lazy">
+            <h3>Torch Light</h3>
+            <div class="price">₹550</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
 
-    <div class="product" data-name="Extention Board" data-price="1500">
-        <img src="img/extention-board.jpg">
-        <h3>Extention Board</h3>
-        <p>₹800</p>
-        <button onclick="addToCart(this)">Add</button>
-    </div>
+        <!-- Product 9 -->
+        <div class="product" data-name="LED Panel Light" data-price="500" data-img="img/Lighting/LED Panel Light.webp">
+            <img src="img/Lighting/LED Panel Light.webp" alt="Torch Light" loading="lazy">
+            <h3>LED Panel Light</h3>
+            <div class="price">₹500</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
 
-</section>
+        <!-- Product 10 -->
+        <div class="product" data-name="Solar Light" data-price="1150" data-img="img/Lighting/Solar Light.jpg">
+            <img src="img/Lighting/Solar Light.jpg" alt="Torch Light" loading="lazy">
+            <h3>Solar Light</h3>
+            <div class="price">₹1150</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
 
-<!-- Cart -->
-<section class="cart">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <h3>Total: ₹<span id="total">0</span></h3>
-</section>
+        <!-- Product 11 -->
+        <div class="product" data-name="Tube Light" data-price="150" data-img="img/Lighting/Tube Light.jpg">
+            <img src="img/Lighting/Tube Light.jpg" alt="Torch Light" loading="lazy">
+            <h3>Tube Light</h3>
+            <div class="price">₹150</div>
+            <div class="product-actions">
+                <button class="btn btn-secondary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i>
+                    Add</button>
+                <button class="btn btn-primary" onclick="buyNow(this)">Buy Now</button>
+            </div>
+        </div>
+    </section>
 
-<script src="js/script.js"></script>
+    <!-- CART SECTION -->
+    <section class="cart-section" id="cartPanel">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart" style="color:#2874f0;"></i> Your Cart</h2>
+            <button class="clear-cart-btn" id="clearCartBtn"><i class="fas fa-trash-alt"></i> Clear</button>
+        </div>
+
+        <ul class="cart-items-list" id="cart-items-list"></ul>
+
+        <div id="emptyCartMessage" class="empty-cart-msg" style="display: none;">
+            <i class="fas fa-box-open" style="font-size: 48px; color: #94a3b8; margin-bottom: 16px;"></i>
+            <p>Your cart is empty</p>
+            <p style="font-size: 15px; margin-top: 8px;">Tap "Add" to get started</p>
+        </div>
+
+        <div class="cart-summary">
+            <div class="total-row">
+                <span>Total</span>
+                <span>₹<span id="cart-total">0</span></span>
+            </div>
+            <div class="checkout-actions">
+                <button class="btn btn-secondary btn-large" id="continueShoppingBtn"><i class="fas fa-arrow-left"></i>
+                    Continue</button>
+                <button class="btn btn-primary btn-large" id="placeOrderBtn"><i class="fas fa-bolt"></i> Place
+                    Order</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="brand-note">⚡ Voltixa — trusted electricals</div>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
